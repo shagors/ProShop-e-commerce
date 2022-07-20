@@ -28,6 +28,10 @@ const CartScreen = () => {
     console.log('remove');
   }
 
+  const checkoutHandler = () => {
+    navigate('/login?redirect=shipping');   
+  }
+
 
   return (
     <Row>
@@ -75,6 +79,11 @@ const CartScreen = () => {
             <ListGroupItem>
               <h2>Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)}) items</h2>
               ${cartItems.reduce((acc, item) => acc + item.qty * item.price, 0).toFixed(2)}
+            </ListGroupItem>
+            <ListGroupItem>
+              <Button type='button' className='btn-block' disabled={cartItems.length === 0}
+              onClick={checkoutHandler}
+              >Proceed To Checkout</Button>
             </ListGroupItem>
           </ListGroup>
         </Card>
