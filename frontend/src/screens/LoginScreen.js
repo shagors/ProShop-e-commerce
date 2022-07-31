@@ -43,7 +43,7 @@ const LoginScreen = () => {
           </FormGroup>
 
           <FormGroup className='py-3' controlId='password'>
-            <FormLabel>Password Address</FormLabel>
+            <FormLabel>Password</FormLabel>
             <FormControl type='password' placeholder='Enter password' value={password} onChange={(e) => setPassword(e.target.value)}></FormControl>
           </FormGroup>
 
